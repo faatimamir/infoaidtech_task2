@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Voice Recognition System</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Voice Recognition System</h1>
+        <button id="recordButton" onclick="startRecording()">Record</button>
+        <p id="transcriptionResult"></p>
+    </div>
+
+    <script>
+        function startRecording() {
+            document.getElementById('transcriptionResult').innerText = "Recording...";
+            
+            fetch('/record', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('transcriptionResult').innerText = "Transcription: " + data.transcription;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('transcriptionResult').innerText = "Error: " + error.error;
+            });
+        }
+    </script>
+</body>
+</html>
