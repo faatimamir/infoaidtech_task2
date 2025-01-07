@@ -15,20 +15,19 @@ Google Cloud credentials JSON file
 Setup
 Clone the Repository
 
-bash
-Copy code
-git clone https://github.com/your-username/speechinsight.git
-cd speechinsight
+
+    git clone https://github.com/faatimamir/speech-recognition-with-Google-Cloud-Speech-to-Text.git
+    cd speechinsight
 Install Dependencies
 
 Create a virtual environment and install the required Python packages:
 
-bash
-Copy code
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-pip install -r requirements.txt
-Google Cloud Credentials
+
+    python -m venv venv
+    source venv/bin/activate  
+    # On Windows use `venv\Scripts\activate`
+    pip install -r requirements.txt
+    Google Cloud Credentials
 
 Obtain your Google Cloud credentials JSON file from your Google Cloud project.
 Rename this file to your-google-credentials.json and place it in the project root directory.
@@ -36,9 +35,8 @@ Run the Application
 
 Start the Flask application with the following command:
 
-bash
-Copy code
-python app.py
+
+    python app.py
 The application will be available at http://127.0.0.1:5000/.
 
 Usage
